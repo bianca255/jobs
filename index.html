@@ -3,51 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job & Skills Finder</title>
+    <title>Fitness Tracker & Weather Companion</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Job & Skills Finder</h1>
-        <p>Find the right job and skills to boost your career</p>
-    </header>
-    
-    <main>
-        <section class="search-section">
-            <h2>Search Jobs</h2>
-            <div class="search-container">
-                <div class="search-box">
-                    <input type="text" id="keyword" placeholder="Job title, skills, or company">
-                    <input type="text" id="location" placeholder="Location">
-                    <button id="search-btn">Search</button>
-                </div>
-                <div class="filters">
-                    <select id="sort-by">
-                        <option value="relevance">Relevance</option>
-                        <option value="date">Date</option>
-                        <option value="salary">Salary</option>
-                    </select>
-                </div>
-            </div>
-        </section>
-        
-        <section class="results-section">
-            <div class="job-listings" id="job-listings">
-                <!-- Job listings will be loaded here -->
-            </div>
-            
-            <div class="skills-analysis" id="skills-analysis">
-                <!-- Skills analysis will be loaded here -->
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <p>Data provided by Adzuna API and Open Skills API</p>
-    </footer>
+    <div class="container">
+        <div class="header">
+            <h1>Fitness Companion</h1>
+            <button id="theme-toggle">
+                <i class="fas fa-moon"></i> Toggle Theme
+            </button>
+        </div>
 
-    <script src="js/utils.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/main.js"></script>
+        <form id="weight-form" class="weight-form">
+            <div class="form-group">
+                <label>Enter Your Weight:</label>
+                <input type="number" id="weight" required>
+                <div>
+                    <input type="radio" id="kg" name="unit" value="kg" checked>
+                    <label for="kg">kg</label>
+                    <input type="radio" id="lbs" name="unit" value="lbs">
+                    <label for="lbs">lbs</label>
+                </div>
+            </div>
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        <div id="loading" class="hidden">
+            Loading recommendations...
+        </div>
+
+        <div id="results-section" class="hidden">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="all">All Exercises</button>
+                <button class="tab-btn" data-tab="cardio">Cardio</button>
+                <button class="tab-btn" data-tab="strength">Strength</button>
+            </div>
+
+            <div id="all-exercises-tab" class="tab-content active">
+                <div id="all-exercises"></div>
+            </div>
+            <div id="cardio-exercises-tab" class="tab-content">
+                <div id="cardio-exercises"></div>
+            </div>
+            <div id="strength-exercises-tab" class="tab-content">
+                <div id="strength-exercises"></div>
+            </div>
+        </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
