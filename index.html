@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job & Skills Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Job & Skills Finder</h1>
+        <p>Find the right job and skills to boost your career</p>
+    </header>
+    
+    <main>
+        <section class="search-section">
+            <h2>Search Jobs</h2>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="keyword" placeholder="Job title, skills, or company">
+                    <input type="text" id="location" placeholder="Location">
+                    <button id="search-btn">Search</button>
+                </div>
+                <div class="filters">
+                    <select id="sort-by">
+                        <option value="relevance">Relevance</option>
+                        <option value="date">Date</option>
+                        <option value="salary">Salary</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        
+        <section class="results-section">
+            <div class="job-listings" id="job-listings">
+                <!-- Job listings will be loaded here -->
+            </div>
+            
+            <div class="skills-analysis" id="skills-analysis">
+                <!-- Skills analysis will be loaded here -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Data provided by Adzuna API and Open Skills API</p>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
